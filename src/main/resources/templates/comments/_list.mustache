@@ -89,23 +89,27 @@
         const commentEditModal = document.querySelector("#comment-edit-modal");
 
         // 모달 이벤트 감지
-        commentEditModal.addEventListener("show.bs.modal", function(event){
-           // 1. 트리거 버튼 선택
+        commentEditModal.addEventListener("show.bs.modal", function (event) {
+            // 1. 트리거 버튼 선택
             const triggerBtn = event.relatedTarget;
 
-           // 2. 데이터 가져오기
+            // 2. 데이터 가져오기
             const id = triggerBtn.getAttribute("data-bs-id"); /* id 가져오기 */
             const nickname = triggerBtn.getAttribute("data-bs-nickname");
             const body = triggerBtn.getAttribute("data-bs-body");
             const articleId = triggerBtn.getAttribute("data-bs-article-id"); /* 부모 아이디 가져오기 */
 
-           // 3. 수정 폼에 데이터 반영
+            // 3. 수정 폼에 데이터 반영
             document.querySelector("#edit-comment-nickname").value = nickname;
             document.querySelector("#edit-comment-body").value = body;
             document.querySelector("#edit-comment-id").value = id;
             document.querySelector("#edit-comment-article-id").value = articleId;
         });
     }
+</script>
+
+<!-- 댓글 수정실행 -->
+<script>
     {
         // 수정 완료 버튼 선택
         const commentUpdateBtn = document.querySelector("#comment-update-btn");
